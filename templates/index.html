@@ -1,0 +1,258 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+    <title>Arnora Times</title>
+
+    <style>
+        .mySlides {display:none;}
+    </style>
+</head>
+<body>
+      <div class="topnav">
+        <a style="background-color: aliceblue;" id="demo" ></a>
+        <a href="/">Home</a>
+        <a href="#contact">Sitemap</a>
+        
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-instagram"></a>
+        <a href="#" class="fa fa-tumblr"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-youtube"></a>
+      </div>
+      
+      <div class="navbar">
+          <a href="/">Home</a>
+          <a href="state">State</a>
+          <a href="national">National</a>
+          <a href="buisness">Business</a>           
+          <a href="opinion">Opinion</a> 
+          <a href="sport">Sports</a> 
+          <a href="international">International</a> 
+          
+          <div class="dropdown">
+            <a class="dropbtn" style="color: aliceblue;">Horoscope
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+              <a href="#">Daily </a>
+              <a href="#">Weekly</a>
+            </div>
+          </div> 
+
+          <a href="sunday_magazine">Sunday Magazine</a> 
+          <a href="Gallery">Photo Gallery</a> 
+  </div>
+
+          
+      <section class="main">
+        <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xs-8">
+
+            <div class="carousel slide" data-ride="carousel" data-interval="1000" id="crtnews">
+              
+               <div class="carousel-inner">              
+                 <div class="carousel-item active">
+                    <img src="{% static 'image/1.png' %}" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h3>first</h3>
+                    </div>
+                 </div>                
+                           
+                <div class="carousel-item">
+                   <img src="{% static 'image/2.jpg' %}" alt="">
+                   <div class="carousel-caption d-none d-md-block">
+                     <h3>second</h3>
+                   </div>
+                </div>
+                
+                <div class="carousel-item">
+                  <img src="{% static 'image/3.jpg' %}" alt="">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h3>Third</h3>
+                  </div>
+               </div>  
+
+               <div class="carousel-item">
+                <img src="{% static 'image/4.png' %}" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                  <h3>fourth</h3>
+                </div>
+             </div>  
+
+              </div>
+              
+               <a href="#crtnews" class="carousel-control-next" data-slide="next">
+                 <span class="carousel-control-next-icon"></span></a>
+               <a href="#crtnews" class="carousel-control-prev" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span></a>
+
+              </div>
+
+
+            <section class="stories">
+              <br>
+              <p>Today's Stories</p>
+              {% for dest in dests %}
+              <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-6">
+                <img src="{{dest.image.url}}" alt="">
+                <a href="{{dest.link}}">{{dest.Description}}</a>
+              </div>
+              {% endfor %}
+            </section>
+
+              <div class="state col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-12">
+                <br>
+                <h4>State</h4>
+                {% for s in states %}
+                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-6">
+                  <img src="{{s.image.url}}" alt="">
+                  <a href="{{s.link}}">{{s.Description}}</a>
+                </div>
+                {% endfor %}
+              </div>
+
+              <div class="international col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-12">
+                  <br>
+                  <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-6">
+                      <h4>National</h4>
+                      {% for n in national %}
+                    <img src="{{n.image.url}}" alt="">
+                    <a href="{{n.link}}">{{n.Description}}</a>
+                    {% endfor %}
+                  </div>
+
+                  
+                  <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-6">
+                    <h4>Sports</h4>
+                      {% for s in sport %}
+                    <img src="{{s.image.url}}" alt="">
+                    <a href="{{s.link}}">{{s.Description}}</a>
+                    {% endfor %}
+                  </div>
+                  
+                </div>
+                
+                <div class="international col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-12">
+                    <br>
+                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-6">
+                        <h4>Business</h4>
+                        {% for b in buisness %}
+                      <img src="{{b.image.url}}" alt="">
+                      <a href="{{b.link}}">{{b.Description}}</a>
+                      {% endfor %}
+                    </div>
+  
+                    
+                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-6">
+                      <h4>International</h4>
+                        {% for s in international %}
+                      <img src="{{s.image.url}}" alt="">
+                      <a href="{{s.link}}">{{s.Description}}</a>
+                      {% endfor %}
+                    </div>
+                    
+                  </div>
+          </div>
+
+          <div class="state col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xs-4">
+
+            <a style="font-size: 25px; color:red" href="/">Epaper</a>  <!-- upload news paper -->
+
+              <div class="latetsnews">
+                <p>Latest News Update</p>
+                {% for l in lnews %}
+                <i class="right"></i>
+                <a style="font-size: 20px;" href="{{l.link}}">{{l.Description}}</a> <br>
+                {% endfor %}
+              </div>
+
+              <div class="Editorials">
+                <p>Editorials</p>
+                  {% for e in eds %}
+                <img src="{{e.image.url}}" alt="">
+                <a href="{{e.link}}">{{e.Description}}</a>
+                  {% endfor %}
+              </div>
+
+              <div class="WeeklySpecial">
+                <p>Weekly Special</p>
+                {% for w in weekly %}
+                <i class="right"></i>
+          
+                  <li><a href="{{w.link}}">{{w.Description}}</a></li>
+             
+                {% endfor %}
+               </div>
+
+               <div class="otherlinks">
+                  <p>Other Important Links</p>
+                    {% for o in otherlink %}
+            
+                    <li><a href="{{o.link}}">{{o.Description}}</a></li>
+                  
+                  {% endfor %}
+                 </div>
+
+                 <div class="AdvertiseTariffPlan">
+                    <p>Advertise Tariff Plan</p>
+                    {% for a in advertise %}
+                   
+                      <li><a href="{{a.link}}">{{a.Description}}</a></li>
+                    
+                    {% endfor %}
+                 </div>
+                 <br><br>
+                <div class="googleCalendar">
+              <iframe src="https://calendar.google.com/calendar/embed?title=Put%20your%20Title%20here&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=8d3fc8l9g04n7r9im45fsn08ak%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FNew_York" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                </div>
+          </div>
+   </section>
+
+<section class="footer">
+<div class="footer1">
+
+<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xs-3">
+<a href="">Home</a>
+</div>
+<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xs-3">
+  <a href="">About Us</a>
+</div>
+<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xs-3">
+  <a href="mailto:govindkumar4672@gmail.com?Subject=Hello%20again" target="_top">Send Mail</a>
+</div>
+<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xs-3">
+    <a href="">Weather</a>
+</div>
+<br> <br>
+<p>Edited, Printed, Published by Shakti Kumari and owned by Arnora.
+  Printed at JANSAMPARK PRINTING PRESS, BYE PASS SIDHRA,
+  Jammu.Phone no: +91 8082616262,
+  Arnora Times Upper Roop Nagar,JDA Colony,Jammu 180014(J&K)
+    </p>
+</div>
+        <div class="footer2" >
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-instagram"></a>
+        <a href="#" class="fa fa-tumblr"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-youtube"></a>
+      </div>
+</section>
+
+
+   <script src="{% static 'index.js' %}"></script>  
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+    <title>Arnora Times</title>
+
+    <style>
+        .mySlides {display:none;}
+    </style>
+</head>
+<body>
+
+    <div class="topnav">
+        <a style="background-color: aliceblue;" id="demo" ></a>
+        <a href="/">Home</a>
+        <a href="#contact">Sitemap</a>
+        
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-instagram"></a>
+        <a href="#" class="fa fa-tumblr"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-youtube"></a>
+      </div>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="">State</a>
+        <a href="national">National</a>
+        <a href="buisness">Business</a>           
+        <a href="opinion">Opinion</a> 
+        <a href="sport">Sports</a> 
+        <a href="international">International</a> 
+        
+        <div class="dropdown">
+          <a class="dropbtn" style="color: aliceblue;">Horoscope
+            <i class="fa fa-caret-down"></i>
+          </a>
+          <div class="dropdown-content">
+            <a href="#">Daily </a>
+            <a href="#">Weekly</a>
+          </div>
+        </div> 
+
+        <a href="sunday_magazine">Sunday Magazine</a> 
+        <a href="Gallery">Photo Gallery</a> 
+</div>
+
+
+
+    <div class="mainstate ">
+            <h1>State</h1>
+        <br>
+       
+        {% for s in bstate %}
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-6">
+          <img src="{{s.image.url}}" alt="">
+          <a href="{{s.link}}">{{s.Description}}</a>
+        </div>
+        {% endfor %}
+    </div>
+
+
+
+<section class="footer">
+<div class="footer1">
+
+<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xs-3">
+<a href="">Home</a>
+</div>
+<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xs-3">
+  <a href="">About Us</a>
+</div>
+<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xs-3">
+  <a href="mailto:govindkumar4672@gmail.com?Subject=Hello%20again" target="_top">Send Mail</a>
+</div>
+<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xs-3">
+    <a href="">Weather</a>
+</div>
+<br> <br>
+<p>Edited, Printed, Published by Shakti Kumari and owned by Arnora.
+  Printed at JANSAMPARK PRINTING PRESS, BYE PASS SIDHRA,
+  Jammu.Phone no: +91 8082616262,
+  Arnora Times Upper Roop Nagar,JDA Colony,Jammu 180014(J&K)
+    </p>
+</div>
+        <div class="footer2" >
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-instagram"></a>
+        <a href="#" class="fa fa-tumblr"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-youtube"></a>
+      </div>
+</section>
+
+
+   <script src="{% static 'index.js' %}"></script>  
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
