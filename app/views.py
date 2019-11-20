@@ -99,3 +99,7 @@ def gallery(request):
     pg = photo_gallery.objects.all()
     m = {'pg':pg,'mp':mp}
     return render(request,'gallery.html',m)
+
+def sitemap(request):
+    m = photo_gallery.objects.all()
+    return render(request,'sitemap.html',{'m':m}) 

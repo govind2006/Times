@@ -17,15 +17,18 @@
 </head>
 <body>
       <div class="topnav">
+        <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9 col-xs-9">
         <a style="background-color: aliceblue;" id="demo" ></a>
         <a href="/">Home</a>
-        <a href="#contact">Sitemap</a>
-        
+        <a href="sitemap">Sitemap</a>
+      </div>
+        <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xs-3">
         <a href="#" class="fa fa-facebook"></a>
         <a href="#" class="fa fa-instagram"></a>
         <a href="#" class="fa fa-tumblr"></a>
         <a href="#" class="fa fa-twitter"></a>
         <a href="#" class="fa fa-youtube"></a>
+      </div>
       </div>
       
       <div class="navbar">
@@ -38,7 +41,7 @@
           <a href="international">International</a> 
           
           <div class="dropdown">
-            <a class="dropbtn" style="color: aliceblue;">Horoscope
+            <a class="dropbtn" style="color: aliceblue; ">Horoscope
               <i class="fa fa-caret-down"></i>
             </a>
             <div class="dropdown-content">
@@ -102,7 +105,7 @@
               {% for dest in dests %}
               <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-6">
                 <img src="{{dest.image.url}}" alt="">
-                <a href="{{dest.link}}">{{dest.Description}}</a>
+                <a href="{{dest.pdf.url}}">{{dest.Description}}</a>
               </div>
               {% endfor %}
             </section>
@@ -113,7 +116,7 @@
                 {% for s in states %}
                 <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-6">
                   <img src="{{s.image.url}}" alt="">
-                  <a href="{{s.link}}">{{s.Description}}</a>
+                  <a href="{{s.pdf.url}}">{{s.Description}}</a>
                 </div>
                 {% endfor %}
               </div>
@@ -121,19 +124,19 @@
               <div class="international col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-12">
                   <br>
                   <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-6">
-                      <h4>National</h4>
+                      <h4 style="width: 100px;" >National</h4>
                       {% for n in national %}
                     <img src="{{n.image.url}}" alt="">
-                    <a href="{{n.link}}">{{n.Description}}</a>
+                    <a href="{{n.pdf.url}}">{{n.Description}}</a>
                     {% endfor %}
                   </div>
 
                   
                   <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-6">
-                    <h4>Sports</h4>
+                    <h4 style="width: 80px;">Sports</h4>
                       {% for s in sport %}
                     <img src="{{s.image.url}}" alt="">
-                    <a href="{{s.link}}">{{s.Description}}</a>
+                    <a href="{{s.pdf.url}}">{{s.Description}}</a>
                     {% endfor %}
                   </div>
                   
@@ -142,10 +145,10 @@
                 <div class="international col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-12">
                     <br>
                     <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-6">
-                        <h4>Business</h4>
+                        <h4 style="width: 100px;">Business</h4>
                         {% for b in buisness %}
                       <img src="{{b.image.url}}" alt="">
-                      <a href="{{b.link}}">{{b.Description}}</a>
+                      <a href="{{b.pdf.url}}">{{b.Description}}</a>
                       {% endfor %}
                     </div>
   
@@ -154,7 +157,7 @@
                       <h4>International</h4>
                         {% for s in international %}
                       <img src="{{s.image.url}}" alt="">
-                      <a href="{{s.link}}">{{s.Description}}</a>
+                      <a href="{{s.pdf.url}}">{{s.Description}}</a>
                       {% endfor %}
                     </div>
                     
@@ -169,7 +172,7 @@
                 <p>Latest News Update</p>
                 {% for l in lnews %}
                 <i class="right"></i>
-                <a style="font-size: 20px;" href="{{l.link}}">{{l.Description}}</a> <br>
+                <a style="font-size: 20px;" href="{{l.pdf.url}}">{{l.Description}}</a> <br>
                 {% endfor %}
               </div>
 
@@ -177,7 +180,7 @@
                 <p>Editorials</p>
                   {% for e in eds %}
                 <img src="{{e.image.url}}" alt="">
-                <a href="{{e.link}}">{{e.Description}}</a>
+                <a href="{{e.pdf.url}}">{{e.Description}}</a>
                   {% endfor %}
               </div>
 
@@ -186,7 +189,7 @@
                 {% for w in weekly %}
                 <i class="right"></i>
           
-                  <li><a href="{{w.link}}">{{w.Description}}</a></li>
+                  <li><a href="{{w.pdf.url}}">{{w.Description}}</a></li>
              
                 {% endfor %}
                </div>
@@ -195,7 +198,7 @@
                   <p>Other Important Links</p>
                     {% for o in otherlink %}
             
-                    <li><a href="{{o.link}}">{{o.Description}}</a></li>
+                    <li><a href="{{o.pdf.url}}">{{o.Description}}</a></li>
                   
                   {% endfor %}
                  </div>
@@ -203,9 +206,7 @@
                  <div class="AdvertiseTariffPlan">
                     <p>Advertise Tariff Plan</p>
                     {% for a in advertise %}
-                   
-                      <li><a href="{{a.link}}">{{a.Description}}</a></li>
-                    
+                      <li><a href="{{a.pdf.url}}">{{a.Description}}</a></li>                    
                     {% endfor %}
                  </div>
                  <br><br>
@@ -243,7 +244,7 @@
         <a href="#" class="fa fa-tumblr"></a>
         <a href="#" class="fa fa-twitter"></a>
         <a href="#" class="fa fa-youtube"></a>
-      </div>
+  </div>
 </section>
 
 

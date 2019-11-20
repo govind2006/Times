@@ -16,16 +16,19 @@
     </style>
 </head>
 <body>
-      <div class="topnav">
+    <div class="topnav">
+        <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9 col-xs-9">
         <a style="background-color: aliceblue;" id="demo" ></a>
         <a href="/">Home</a>
         <a href="#contact">Sitemap</a>
-        
+      </div>
+        <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xs-3">
         <a href="#" class="fa fa-facebook"></a>
         <a href="#" class="fa fa-instagram"></a>
         <a href="#" class="fa fa-tumblr"></a>
         <a href="#" class="fa fa-twitter"></a>
         <a href="#" class="fa fa-youtube"></a>
+      </div>
       </div>
       
       <div class="navbar">
@@ -58,7 +61,7 @@
                 {% for s in pg %}
                 <div class="photo col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xs-4">
                   <img src="{{s.image.url}}" alt="">
-                  <a href="{{s.link}}">{{s.Description}}</a>
+                  <a href="{{s.pdf.url}}">{{s.Description}}</a>
                 </div>
                 {% endfor %}
     </div>
@@ -70,12 +73,13 @@
                 <div class="magazinephoto col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-6">
                     <img src="{{s.image.url}}" alt="">
              <div class="carousel-caption d-none d-md-block">
-                    <a href="{{s.link}}">{{s.Description}}</a>
+                    <a href="{{s.pdf.url}}">{{s.Description}}</a>
               </div>
               </div>
               {% endfor %}
-       
-    </div>
+              
+              
+            </div>
 
 
 

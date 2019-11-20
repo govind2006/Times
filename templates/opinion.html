@@ -16,16 +16,19 @@
     </style>
 </head>
 <body>
-      <div class="topnav">
+    <div class="topnav">
+        <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9 col-xs-9">
         <a style="background-color: aliceblue;" id="demo" ></a>
         <a href="/">Home</a>
         <a href="#contact">Sitemap</a>
-        
+      </div>
+        <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xs-3">
         <a href="#" class="fa fa-facebook"></a>
         <a href="#" class="fa fa-instagram"></a>
         <a href="#" class="fa fa-tumblr"></a>
         <a href="#" class="fa fa-twitter"></a>
         <a href="#" class="fa fa-youtube"></a>
+      </div>
       </div>
       
       <div class="navbar">
@@ -57,7 +60,7 @@
         <p>Editorials</p>
           {% for e in eds %}
         <img src="{{e.image.url}}" alt="">
-        <a href="{{e.link}}">{{e.Description}}</a>
+        <a href="{{e.pdf.url}}">{{e.Description}}</a>
           {% endfor %}
     </div>
     <hr align="left" width="50%" size="10" color="black">
@@ -68,7 +71,7 @@
        {% for s in m %}
       
           <img src="{{s.image.url}}" alt="">
-          <a href="{{s.link}}">{{s.Description}}</a>
+          <a href="{{s.pdf.url}}">{{s.Description}}</a>
         
         {% endfor %}
     </div>
@@ -80,7 +83,7 @@
          {% for s in ce %}
           
             <img src="{{s.image.url}}" alt="">
-            <a href="{{s.link}}">{{s.Description}}</a>
+            <a href="{{s.pdf.url}}">{{s.Description}}</a>
          
           {% endfor %}
       </div>
@@ -93,7 +96,7 @@
          {% for s in le %}
      
             <img src="{{s.image.url}}" alt="">
-            <a href="{{s.link}}">{{s.Description}}</a>
+            <a href="{{s.pdf.url}}">{{s.Description}}</a>
      
           {% endfor %}
       </div>

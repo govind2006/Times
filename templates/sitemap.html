@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+<link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+<style>
+.vertical-menu {
+  width: 1000px;
+}
+
+.vertical-menu a {
+  font-size: 22px;
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  margin-bottom:1cm;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+.sty{
+  font-family:serif;
+  text-align: center;
+  font-size:60px;
+}
+.siz{
+  text-align: center;
+  font-size: 50px;
+}
+.men{
+  padding-left:400px;
+
+}
+.vertical-menu a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<p class="sty">Arnora Times</p>
+<div class="navbar">
+  <a href="/">Home</a>
+  <a href="state">State</a>
+  <a href="national">National</a>
+  <a href="buisness">Business</a>           
+  <a href="opinion">Opinion</a> 
+  <a href="sport">Sports</a> 
+  <a href="international">International</a> 
+  
+  <div class="dropdown">
+    <a class="dropbtn" style="color: aliceblue; ">Horoscope
+      <i class="fa fa-caret-down"></i>
+    </a>
+    <div class="dropdown-content">
+      <a href="#">Daily </a>
+      <a href="#">Weekly</a>
+    </div>
+  </div> 
+
+  <a href="sunday_magazine">Sunday Magazine</a> 
+  <a href="Gallery">Photo Gallery</a> 
+</div>
+
+
+<p class="siz">Site Map of Arnora Times</p>
+
+<div class="vertical-menu men">
+  <h1>Menu</h1>
+  <a href="/" class="active">Home</a>
+  <a href="">Index</a>
+  <a href="/national">National</a>
+  <a href="/buisness">Business</a>
+  <a href="/opinion">Opinion</a>
+  <a href="/sport">Sport</a>
+  <a href="/international">International</a>
+  <a href="/sundaymagazine">Sunday Magazine</a>
+  <a href="/Gallery">Gallery</a>
+
+</div>
+
+</body>
+</html>
