@@ -99,12 +99,14 @@
               </div>
 
 
-            <section class="stories">
+            <section class="stories col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-12">
               <br>
               <p>Today's Stories</p>
               {% for dest in dests %}
-              <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-6">
+              <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xs-3">
                 <img src="{{dest.image.url}}" alt="">
+              </div>
+              <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xs-3">
                 <a href="{{dest.pdf.url}}">{{dest.Description}}</a>
               </div>
               {% endfor %}
@@ -114,8 +116,10 @@
                 <br>
                 <h4>State</h4>
                 {% for s in states %}
-                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-6">
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xs-3">
                   <img src="{{s.image.url}}" alt="">
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xs-3">
                   <a href="{{s.pdf.url}}">{{s.Description}}</a>
                 </div>
                 {% endfor %}
@@ -123,11 +127,15 @@
 
               <div class="international col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-12">
                   <br>
-                  <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-6">
+                  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-12">
                       <h4 style="width: 100px;" >National</h4>
                       {% for n in national %}
+                      <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xs-3">
                     <img src="{{n.image.url}}" alt="">
+                  </div>
+                  <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xs-3">
                     <a href="{{n.pdf.url}}">{{n.Description}}</a>
+                    </div>
                     {% endfor %}
                   </div>
 
