@@ -25,34 +25,30 @@
         <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xs-3">
         <a href="#" class="fa fa-facebook"></a>
         <a href="#" class="fa fa-instagram"></a>
-        <a href="#" class="fa fa-tumblr"></a>
+        
         <a href="#" class="fa fa-twitter"></a>
         <a href="#" class="fa fa-youtube"></a>
       </div>
       </div>
       
-      <div class="navbar">
-          <a href="/">Home</a>
-          <a href="state">State</a>
-          <a href="national">National</a>
-          <a href="buisness">Business</a>           
-          <a href="opinion">Opinion</a> 
-          <a href="sport">Sports</a> 
-          <a href="">International</a> 
-          
-          <div class="dropdown">
-            <a class="dropbtn" style="color: aliceblue;">Horoscope
-              <i class="fa fa-caret-down"></i>
-            </a>
-            <div class="dropdown-content">
-              <a href="#">Daily </a>
-              <a href="#">Weekly</a>
-            </div>
-          </div> 
-
-          <a href="sunday_magazine">Sunday Magazine</a> 
-          <a href="Gallery">Photo Gallery</a> 
-  </div>
+      <br>
+      <header class="header">
+        <nav class="flexky" id="flexky">
+          <div class="flexky__button" id="btn-menu"><span></span><span></span><span></span></div>
+          <ul class="flexky__container" id="flexky-menu">
+            <li class="flexky__item"><a class="flexky__link" href="/">Home</a></li>
+            <li class="flexky__item"><a class="flexky__link" href="state">State</a></li>
+            <li class="flexky__item"><a class="flexky__link" href="national">National</a></li>
+            <li class="flexky__item"><a class="flexky__link" href="buisness">Buisness</a></li>
+            <li class="flexky__item"><a class="flexky__link" href="opinion">Opinion</a></li>
+            <li class="flexky__item"><a class="flexky__link" href="sport">Sports</a></li>
+            <li class="flexky__item"><a class="flexky__link" href="#">Horoscope</a></li>
+            <li class="flexky__item"><a class="flexky__link" href="international">International</a></li>
+            <li class="flexky__item"><a class="flexky__link" href="sunday_magazine">Sunday Magazine</a></li>
+            <li class="flexky__item"><a class="flexky__link" href="Gallery">Photo Gallery</a></li>
+          </ul>
+        </nav>
+      </header>
 
 
     <div class="mainstate">
@@ -62,7 +58,7 @@
         {% for s in m %}
         <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xs-6">
           <img src="{{s.image.url}}" alt="">
-          <a href="{{s.pdf.url}}">{{s.Description}}</a>
+          <a href="{{s.pdf.url}}"><p>{{s.Description}}</p></a>
         </div>
         {% endfor %}
     </div>
@@ -73,7 +69,7 @@
 <div class="footer1">
 
 <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xs-3">
-<a href="">Home</a>
+<a href="/">Home</a>
 </div>
 <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xs-3">
   <a href="">About Us</a>
@@ -94,7 +90,7 @@
         <div class="footer2" >
         <a href="#" class="fa fa-facebook"></a>
         <a href="#" class="fa fa-instagram"></a>
-        <a href="#" class="fa fa-tumblr"></a>
+        
         <a href="#" class="fa fa-twitter"></a>
         <a href="#" class="fa fa-youtube"></a>
       </div>
@@ -107,6 +103,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+<script>
+  window.addEventListener("load", () => {
+    let flexky = document.getElementById("flexky"),
+    open = document.getElementById("btn-menu"),
+    menu = document.getElementById("flexky-menu");
+    if (window.pageYOffset > 100) flexky.classList.add("flexky--scroll");
+    window.addEventListener("scroll", () => {
+      window.pageYOffset > 100 && window.innerWidth > 900 ? flexky.classList.add("flexky--scroll") : flexky.classList.remove("flexky--scroll");
+    });
+    open.addEventListener("click", () => {
+      menu.classList.toggle("flexky__container--active");
+    });
+  });
+  </script>
 </body>
 </html>
