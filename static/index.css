@@ -76,7 +76,6 @@
 .header {
 
   font-size: 15px;
-  width: 100%;
   height: 10vh;
   background-color:black ;
   background-repeat: no-repeat;
@@ -86,7 +85,7 @@
 }
 
 .flexky {
-  position: fixed;
+ 
   width: 100%;
   
   transition: background-color 0.3s;
@@ -116,18 +115,21 @@
 }
 .flexky__button span {
   display: block;
+  margin-right: 5px;
   width: 100%;
   height: 4px;
   background-color: #fff;
 }
 .flexky__container {
+  z-index: 10;
+  position: relative;
   display: flex;
   justify-content: space-between;
   width: 95%;
   max-width: 1000px;
   margin: 0 auto;
   list-style: none;
-  background-color: transparent;
+  background-color:black;
 }
 @media screen and (max-width: 900px) {
   .flexky__container {
@@ -234,6 +236,7 @@ font-size: 20px;
 font-weight: 400;
 }
 .Editorials img{
+  margin-top: 10px;
   width: 120px;
   height: 120px;
 }
